@@ -31,10 +31,7 @@ export default function TextForm(props) {
 
     // handle copy
     const handleCopy = () => {
-        var text = document.getElementById("myBox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
-        document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.showAlert("Messaged has been copied.", "success");
     }
 
@@ -48,22 +45,8 @@ export default function TextForm(props) {
         setText(event.target.value);
     }
 
-    // let words = text.trim().split(" ").length;
-    // if (words === 1 && text.split(" ")[0] === "") {
-    //   words = 0;
-    //   return words;
-    // } else {
-    //   return words;
-    // }
-
-    // trim : trim() method removes whitespace from both sides of a string
-    // if string has even an extra space it will remove it..
-
-    // split : method splits a string into an array of substrings, returns the new array, does not change the original string
-
     const wordsCount = (text) => {
-        // let arr = text.split(" ");
-        let words = text.trim().split(" ").length;
+        let words = text.trim().split(/\s+/).length;
         if(words === 1 && text.split(" ")[0] === "") {
             return 0;
         }
