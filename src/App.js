@@ -55,7 +55,7 @@ function App() {
       <Alert alert={alert} />
       <div className="container my-3">
       <Routes>
-          <Route path="/about" element={<About />}>
+          <Route path="/about" element={<About mode={darkMode} />}>
           </Route>
           <Route path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to Analyse" mode={darkMode} />}>
           </Route>
@@ -67,11 +67,3 @@ function App() {
 }
 
 export default App;
-
-
-
-{/* <Navbar title="TextUtils" mode={darkMode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className="container my-3">
-      <TextForm showAlert={showAlert} heading="Enter the text to Analyse" mode={darkMode} /> 
-      </div> */}
